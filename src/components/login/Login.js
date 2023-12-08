@@ -1,41 +1,37 @@
+import {Link, useNavigate} from 'react-router-dom';
+import { useState, useEffect, useContext } from 'react';
+import { AppContext } from '../../App';
+import "./Login.scss"
 
-import { useState, useEffect } from 'react';
+function Login(props) {
+  const navigate = useNavigate();
+  const {setToken} = useContext(AppContext);
+  // const [response, setResponse] = useState(null);
+  // const [credentials, setCredentials] = useState({});
 
-function Login() {
+  // useEffect(()=>{
+  //   console.log(JSON.stringify(credentials));
+  // },[credentials])
 
-  const [response, setResponse] = useState(null);
-  const [credentials, setCredentials] = useState({});
-
-  useEffect(()=>{
-    console.log(JSON.stringify(credentials));
-  },[credentials])
-
-  function handleOnSubmit(event) {
+  async function handleOnSubmit(event) {
     event.preventDefault();
-    console.log('uname - ' + event.currentTarget.elements.uname.value);
-    console.log('pass - ' + event.currentTarget.elements.pass.value);
-    debugger;
-    setCredentials({pass: event.currentTarget.elements.uname.pass, uname: event.currentTarget.elements.uname.value});
-    console.log(JSON.stringify({ userName: credentials.uname, password: credentials.pass}));
-      fetch(
+    const newCr = {username: event.currentTarget.elements.uname.value, password: event.currentTarget.elements.pass.value}
+      const resp = await fetch(
         //`https://jsonplaceholder.typicode.com/posts?title_like=${query}`
         'http://localhost:8080/users/login', {
         method: 'POST',
         cache: 'no-cache',
-        body: JSON.stringify({ username: event.currentTarget.elements.uname.value, password: event.currentTarget.elements.pass.value}),
+        body: JSON.stringify(newCr),
         headers: {'Content-Type': 'application/json;charset=utf-8','Access-Control-Allow-Origin':'*','Accept': 'application/json, text/plain, */*'},
-      })
-      .then(function(resp) {
-        console.log('then' + JSON.stringify(resp.json()));
-        return resp.json()
-      })
-      .then(function(data) {
-        setResponse(data);
-        console.log('Data' + JSON.stringify(data));
-      })
-      .catch(function(error) {
-        console.log(error)
       });
+
+      const jwt = resp.headers.get('Authorization');
+      setToken(jwt);
+      localStorage.setItem('token', 'Bearer ' + jwt);
+
+      if(jwt){
+        navigate('/data');
+      }
   };
 
   return (
