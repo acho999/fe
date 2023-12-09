@@ -65,11 +65,11 @@ function Data (props) {
         <div className="form">
               <form className='upload' onSubmit={handleOnSubmitUpload} encType='multipart/form-data'>
                 <div className="input-container">
-                    <label>Upload file </label>
-                    <input type="file" name="file" required/>
+                    <label> Custom Upload </label>
+                    <input type='file' name='file' className='inputSubmit'/>
                 </div>
                 <div className="button-container">
-                    <input type="submit" />
+                    <input type="submit" className='uploadSubmit'/>
                 </div>
             </form>
 
@@ -77,18 +77,18 @@ function Data (props) {
             <form className='query' onSubmit={handleOnSubmitQuery}  encType='application/x-www-form-urlencoded'>
                 <div className="input-container">
                     <label>Server name </label>
-                    <input type="text" name="name" required/>
+                    <input type="text" name="name" className='serverName' required/>
                 </div>
                 <div className="input-container">
                     <label>Start date </label>
-                    <input type="datetime-local" name="startDate" required/>
+                    <input type="datetime-local" name="startDate" className='startDate' required/>
                 </div>
                 <div className="input-container">
                     <label>End date </label>
-                    <input type="datetime-local" name="endDate" required />
+                    <input type="datetime-local" name="endDate" className='endDate' required />
                 </div>
                 <div className="button-container">
-                    <input type="submit" />
+                    <input className='submit' type="submit" />
                 </div>
             </form>
 

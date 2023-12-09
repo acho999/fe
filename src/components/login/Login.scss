@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+#root{
+    background-color: cadetblue;
+}
+
 .form{
 
     display :flex;
@@ -30,5 +34,6 @@
     .button-container{
         margin-top: 5px;
         margin-bottom: 5px;
+        padding: 5px;
     }
 }

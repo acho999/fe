@@ -1,3 +1,33 @@
 .upload, .query {
     margin-bottom: 10px;
+    background-color: darkgray;
+    border-radius: 15px;
 }
+
+.submit{
+    width: 80px;
+    height: 25px;
+    background-color: rgb(5, 182, 5);
+    border-radius: 15px;
+}
+
+.startDate, .endDate, .serverName{
+    border-radius: 5px;
+}
+
+.uploadSubmit{
+    width: 80px;
+    height: 25px;
+    background-color: rgb(5, 182, 5);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.inputSubmit{
+    margin-top: 11px;
+    width: 180px;
+    height: 25px;
+    text-align: center;
+}
+
+
