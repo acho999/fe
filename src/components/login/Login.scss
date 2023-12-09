@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.form{
+
+    display :flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+
+    form {
+        text-align: center;
+        width: 250px;
+        border: 1px solid black;
+        border-radius: 2px;
+    }
+
+    .input-container{
+        text-align: center;
+        width: 100%;
+        display: block;
+        label {
+            display: block;
+        }
+    }
+
+    .button-container{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
