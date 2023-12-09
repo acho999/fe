@@ -39,14 +39,14 @@ function Login(props) {
       <form onSubmit={handleOnSubmit}>
         <div className="input-container">
           <label>Username </label>
-          <input type="text" name="uname" required/>
+          <input type="text" name="uname" className='unameInput' required/>
         </div>
         <div className="input-container">
           <label>Password </label>
-          <input type="password" name="pass" required />
+          <input type="password" className='passInput' name="pass" required />
         </div>
         <div className="button-container">
-          <input type="submit" />
+          <input type="submit" className='loginSubmit'/>
         </div>
       </form>
     </div>

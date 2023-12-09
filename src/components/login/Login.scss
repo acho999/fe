@@ -36,4 +36,17 @@
         margin-bottom: 5px;
         padding: 5px;
     }
+
+    .loginSubmit{
+        width: 80px;
+        height: 25px;
+        background-color: rgb(5, 182, 5);
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .unameInput, .passInput{
+        border-radius: 5px;
+        text-align: center;
+    }
 }
